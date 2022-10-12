@@ -11,13 +11,14 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The Caesar Cipher technique is one of the earliest and simplest methods of encryption technique. It’s simply a type of substitution cipher, i.e., each letter of a given text is replaced by a letter with a fixed number of positions down the alphabet.<br>  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Encryption of a letter by a shift *n* can be described mathematically as.
 
-![E_n(x)=(x+n)mod\ 26         ](https://www.geeksforgeeks.org/wp-content/ql-cache/quicklatex.com-dca1f01b6a20a73c189d48228c230009_l3.svg)
+<img alt="E_n(x)=(x+n)mod\ 26" src="https://www.geeksforgeeks.org/wp-content/ql-cache/quicklatex.com-dca1f01b6a20a73c189d48228c230009_l3.svg"/>
 
 ### Polybius Square Cipher
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A Polybius Square is a table that allows someone to convert letters into numbers. 
 To make the encryption a little harder, instead of numbers, the square can get one or 2 keywords made up of 5 letters. The characters of these words will substitute each letter of the original text with 2 other letters of the English alphabet
 In order to fit the 26 letters of the alphabet into the 25 cells created by the table, the letters ‘i’ and ‘j’ are usually combined into a single cell. Originally there was no such problem because the ancient greek alphabet has 24 letters.
-![](../Images/Screenshot 2022-09-30 003209.png)
+
+<img src="../Images/Screenshot 2022-09-30 003209.png"/>
 
 
 ### Vigenère Cipher
@@ -193,4 +194,5 @@ for (int i = 0; i < plainText.Length; i++)
             }
 ```
 &ensp;&ensp;&ensp;&ensp;&ensp; The result of encrypting with the key "SUPER"
-![image](../Images/Screenshot 2022-09-29 230523.png)
+
+<img alt="image" src="../Images/Screenshot 2022-09-29 230523.png"/>

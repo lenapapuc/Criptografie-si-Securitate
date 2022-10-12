@@ -28,7 +28,7 @@
     
 
 ## Implementation:
-###Block Cipher : DES
+### Block Cipher : DES
 &ensp;&ensp;&ensp; In order to implement DES, we have to perform, first of all, 
 the initial permutation. The IP(initial permutation) takes the initial 64 bit string and replaces each bit
 with the one on the respective position in the IP table:
@@ -231,7 +231,7 @@ public string Decrypt(string plainText, string key)
 ````
 Finally, we manage to get the desired result:
 
-<img alt="image" src="C:\Users\User\RiderProjects\CryptographyAndSecurity\CryptographyAndSecurity\Images\result.png"/>
+<img src="../Images/result.png"/>
 
 
 ### Stream Cipher : RC4

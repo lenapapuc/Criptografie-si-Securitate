@@ -17,8 +17,8 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A Polybius Square is a table that allows someone to convert letters into numbers. 
 To make the encryption a little harder, instead of numbers, the square can get one or 2 keywords made up of 5 letters. The characters of these words will substitute each letter of the original text with 2 other letters of the English alphabet
 In order to fit the 26 letters of the alphabet into the 25 cells created by the table, the letters ‘i’ and ‘j’ are usually combined into a single cell. Originally there was no such problem because the ancient greek alphabet has 24 letters.
+![](../Images/Screenshot 2022-09-30 003209.png)
 
-![image](Images/Screenshot%202022-09-30%20003209.png)
 
 ### Vigenère Cipher
 
@@ -192,6 +192,5 @@ for (int i = 0; i < plainText.Length; i++)
                 encryptedText.Append(alphabet.Uppercase()[x]);
             }
 ```
-&ensp;&ensp;&ensp;&ensp;&ensp; This is the result of encrypting with the key "SUPER":
-![image](Images/Screenshot%202022-09-29%20230523.png)
-
+&ensp;&ensp;&ensp;&ensp;&ensp; The result of encrypting with the key "SUPER"
+![image](../Images/Screenshot 2022-09-29 230523.png)

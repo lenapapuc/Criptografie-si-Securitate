@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO;
+using System.Text;
+using Lab2;
 
 namespace CryptographyAndSecurity
 {
@@ -10,28 +12,42 @@ namespace CryptographyAndSecurity
         static void Main(string[] args)
         {
         
-        /*CaesarCipher caesarCipher = new CaesarCipher();
-        Console.WriteLine("Input text for Caesar Encryption:");
-        caesarCipher.CipherEncryption();
-        Console.WriteLine("Input text for Caesar Decryption:");
-        caesarCipher.CipherDecryption();
+        Cipher caesarCipher = new CaesarCipher();
+        Console.WriteLine("This is the encryption with Caesar Cipher:");
+        Console.WriteLine(caesarCipher.Encrypt("hello", "3")); ;
+        Console.WriteLine("This is the decryption with Caesar Cipher:");
+        Console.WriteLine(caesarCipher.Decrypt("khoor", "3"));
         
-        CaesarCipherPermutation caesarCipherPermutation = new CaesarCipherPermutation();
-        Console.WriteLine("Input text for Caesar Encryption with alphabet permutation:");
-        caesarCipherPermutation.CipherEncryption();
+        Cipher caesarCipherPermutation = new CaesarCipherPermutation();
+        Console.WriteLine("This is the encryption with Caesar Cipher with permutation:");
+        Console.WriteLine(caesarCipherPermutation.Encrypt("hello", "3"));
         Console.WriteLine("Input text for Caesar Decryption with alphabet permutation:");
-        caesarCipherPermutation.CipherDecryption();*/
+        Console.WriteLine(caesarCipherPermutation.Decrypt("liqqs","3"));
 
-       /* VigenereCipher vigenereCipher = new VigenereCipher();
-        Console.WriteLine("Input your uppercase text for encryption with Vigenere Cipher:");
-        vigenereCipher.Encrypt();
-        Console.WriteLine("Input your uppercase encrypted text for decryption with Vigenere Cipher: ");
-        vigenereCipher.Decrypt();*/
-        PolybiusSquareCipher polybiusSquareCipher = new PolybiusSquareCipher();
-        //polybiusSquareCipher.PolybiusEncrypt();
-        polybiusSquareCipher.PolybiusDecrypt();
+        Cipher vigenereCipher = new VigenereCipher();
+        
+        vigenereCipher.Encrypt("PER ASPERA AD ASTRA", "SUPER");
+        vigenereCipher.Decrypt("HYGEJHYGERVUHXIS", "SUPER");
+        
+        Cipher polybiusSquareCipher = new PolybiusSquareCipher();
+        polybiusSquareCipher.Encrypt("hello", String.Empty);
+        polybiusSquareCipher.Decrypt("osmaumumuc", string.Empty);
+        
+        String plainText = "123456BCD1325361";
+        String key = "AABB09182736CCDD";
+        // string text = "12";
+        
+        Cipher des = new DES();
+        Console.WriteLine("This is the encrypted message with DES: "+ des.Encrypt(plainText, key));
+        Console.WriteLine("This is the decrypted message with DES: "+ des.Decrypt("02d013d0d5fc027a",key));
 
+        string plain_text_rc4 = "Plaintext";
+        string key_rc4 = "Key";
+        
 
+        Cipher rc4 = new RC4();
+        Console.WriteLine("This is the encryption with RC4: " + rc4.Encrypt(plain_text_rc4, key_rc4));
+        Console.WriteLine("This is the decyption with RC4: " + rc4.Decrypt("BBF316E8D940AF0AD3", key_rc4));
 
         }
     }

@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Text;
+using Lab2;
 
 namespace CryptographyAndSecurity
 {
-    public class PolybiusSquareCipher
+    public class PolybiusSquareCipher : Cipher
     {
         public string keyRow = "mouse";
         public string keyColumn = "musca";
@@ -11,11 +12,8 @@ namespace CryptographyAndSecurity
         string newAlphabet = alphabet.Lowercase().Remove(alphabet.Lowercase().IndexOf('j'), 1);
         StringBuilder encryptedText = new StringBuilder();
         int row, column;
-        public string PolybiusEncrypt()
+        public string Encrypt(string plainText, string str)
         {
-            
-            string plainText = Console.ReadLine();
-            
             for (int i = 0; i < plainText.Length; i++)
             {
                 
@@ -32,14 +30,13 @@ namespace CryptographyAndSecurity
                 encryptedText.Append(keyColumn[column]);
             }
             
-            Console.WriteLine("This is the text encrypted with the Polybius Square cipher" + encryptedText);
+            Console.WriteLine("This is the text encrypted with the Polybius Square cipher: " + encryptedText);
             return encryptedText.ToString();
             
         }
 
-        public string PolybiusDecrypt()
+        public string Decrypt(string encryptedText, string str)
         {
-            string encryptedText = Console.ReadLine();
             StringBuilder decryptedText = new StringBuilder();
             for (int i = 0; i < encryptedText.Length; i++ )
             {
@@ -48,7 +45,7 @@ namespace CryptographyAndSecurity
                 decryptedText.Append(newAlphabet[index]);
             }
             
-            Console.WriteLine("This is the text encrypted with the Polybius Square cipher" + decryptedText);
+            Console.WriteLine("This is the text encrypted with the Polybius Square cipher: " + decryptedText);
             return decryptedText.ToString();
         }
         

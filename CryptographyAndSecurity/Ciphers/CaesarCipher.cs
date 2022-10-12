@@ -1,12 +1,12 @@
 ﻿using System;
 using System.IO;
 using System.Text;
+using Lab2;
 
 namespace CryptographyAndSecurity
 { 
-    public class CaesarCipher
+    public class CaesarCipher: Cipher
     {
-        private static int static_key = 3;
         private static Alphabet cases = new Alphabet();
         public static string UppercaseAlphabet = cases.Uppercase();
         public static string LowercaseAlphabet = cases.Lowercase();
@@ -29,9 +29,8 @@ namespace CryptographyAndSecurity
            return message;
        }
 
-       public void CipherEncryption()
+       public string Encrypt(string text, string key)
        {
-           string text = Console.ReadLine();
            string encryptedText = String.Empty;
             
             
@@ -39,31 +38,28 @@ namespace CryptographyAndSecurity
            {
                if (Char.IsLetter(character))
                {
-                   encryptedText += GiveMeChar(character, static_key);
+                   encryptedText += GiveMeChar(character, int.Parse(key));
                }
                else encryptedText += character;
            }
-
-           Console.WriteLine("The encrypted text is: " + encryptedText);
+           return encryptedText;
        }
-
-       public void CipherDecryption()
+       
+       public string Decrypt(string text, string key)
        {
-
-           string text = Console.ReadLine();
            string decryptedText = String.Empty;
            
            foreach (var character in text)
            {
                if (Char.IsLetter(character))
                {
-                   decryptedText += GiveMeChar(character, 26 - static_key);
+                   decryptedText += GiveMeChar(character, 26 - int.Parse(key));
                }
                else decryptedText += character;
            }
 
-           Console.WriteLine("The decrypted text is: " + decryptedText);
-           
+           return decryptedText;
+
        }
 
 

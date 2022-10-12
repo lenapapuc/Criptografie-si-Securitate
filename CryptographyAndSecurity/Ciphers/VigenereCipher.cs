@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Text;
+using Lab2;
 
 namespace CryptographyAndSecurity
 {
-    public class VigenereCipher
+    public class VigenereCipher : Cipher
     {
-        public static string key = "SUPER";
+        //public static string key = "SUPER";
         
         public string RemoveNonLetters(string plainText)
         {
@@ -16,7 +17,7 @@ namespace CryptographyAndSecurity
             return newPlainText.ToString();
         }
 
-        public string GetKeystream(string plainText)
+        public string GetKeystream(string plainText, string key)
         {
             StringBuilder keyStream = new StringBuilder();
             int times = RemoveNonLetters(plainText).Length / key.Length;
@@ -35,14 +36,13 @@ namespace CryptographyAndSecurity
             return keyStream.ToString();
         }
 
-        public void Encrypt()
+        public string Encrypt(string plainText, string key )
         {
             //PER ASPERA AD ASTRA
-            string plainText = RemoveNonLetters(Console.ReadLine());
-            string keyStream = GetKeystream(plainText);
+            plainText = RemoveNonLetters(plainText);
+            string keyStream = GetKeystream(plainText, key);
             StringBuilder encryptedText = new StringBuilder();
             Alphabet alphabet = new Alphabet();
-            Console.WriteLine(keyStream);
             for (int i = 0; i < plainText.Length; i++)
             {
                 int x = (alphabet.Uppercase().IndexOf(plainText[i]) + alphabet.Uppercase().IndexOf(keyStream[i])) % 26;
@@ -50,12 +50,13 @@ namespace CryptographyAndSecurity
             }
 
             Console.WriteLine("The encrypted text with the Vigenere Cipher is: " + encryptedText.ToString());
+            return encryptedText.ToString();
         }
         
-        public void Decrypt()
+        public string Decrypt(string encryptedText, string key)
         {
-            string encryptedText = RemoveNonLetters(Console.ReadLine());
-            string keyStream = GetKeystream(encryptedText);
+            encryptedText = RemoveNonLetters(encryptedText);
+            string keyStream = GetKeystream(encryptedText, key);
             StringBuilder decryptedText = new StringBuilder();
             Alphabet alphabet = new Alphabet();
             for (int i = 0; i < encryptedText.Length; i++)
@@ -66,6 +67,7 @@ namespace CryptographyAndSecurity
 
 
             Console.WriteLine("The decrypted text is: " + decryptedText.ToString());
+            return decryptedText.ToString();
         }
        
     }

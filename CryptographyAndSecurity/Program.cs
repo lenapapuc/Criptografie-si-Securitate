@@ -1,6 +1,8 @@
 ﻿using System;
 using System.IO;
 using System.Text;
+using CryptographyAndSecurity.Hash_Functions_and_Digital_Signatures;
+using CryptographyAndSecurity.Hash_Functions_and_Digital_Signatures.Digital_Signature;
 using CryptographyAndSecurity.Modern_Ciphers.AsymmetricCipher;
 using Lab2;
 
@@ -50,10 +52,19 @@ namespace CryptographyAndSecurity
         Console.WriteLine("This is the encryption with RC4: " + rc4.Encrypt(plain_text_rc4, key_rc4));
         Console.WriteLine("This is the decyption with RC4: " + rc4.Decrypt("BBF316E8D940AF0AD3", key_rc4));*/
 
-        Cipher rsa = new RSA();
+       /* Cipher rsa = new RSA();
         Console.WriteLine(rsa.Encrypt("car", string.Empty));
-        Console.WriteLine(rsa.Decrypt("036013095", string.Empty));
-       
+        Console.WriteLine(rsa.Decrypt("036013095", string.Empty));*/
+
+       /* ClientPassword clientPassword = new ClientPassword();
+        clientPassword.AddClients();
+        ConnectionToSql connectToSql = new ConnectionToSql();
+        connectToSql.Connect();*/
+
+       DigitalSignatureClient digitalSignatureClient = new DigitalSignatureClient();
+       digitalSignatureClient.Execute();
+
+
 
         }
     }

@@ -56,10 +56,10 @@ namespace CryptographyAndSecurity
         Console.WriteLine(rsa.Encrypt("car", string.Empty));
         Console.WriteLine(rsa.Decrypt("036013095", string.Empty));*/
 
-       /* ClientPassword clientPassword = new ClientPassword();
+        ClientPassword clientPassword = new ClientPassword();
         clientPassword.AddClients();
         ConnectionToSql connectToSql = new ConnectionToSql();
-        connectToSql.Connect();*/
+        connectToSql.Connect();
 
        DigitalSignatureClient digitalSignatureClient = new DigitalSignatureClient();
        digitalSignatureClient.Execute();
